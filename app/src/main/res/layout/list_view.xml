@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<com.bgt.customeviewdemo.CustomView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.bgt.customeviewdemo.SquareLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:id="@+id/custom_view"
-    app:view_icon="@drawable/ic_action_gallery"
-    app:view_title="Gallery" />
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.bgt.customeviewdemo.CustomView
+        android:id="@+id/custom_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:view_icon="@drawable/ic_action_gallery"
+        app:view_title="Gallery" />
+</com.bgt.customeviewdemo.SquareLayout>
