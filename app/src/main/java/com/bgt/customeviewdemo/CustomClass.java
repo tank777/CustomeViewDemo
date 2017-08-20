@@ -10,10 +10,20 @@ public class CustomClass {
 
     private String title;
     private Drawable drawable;
+    private Drawable selectedDrawable;
 
-    public CustomClass(String title, Drawable drawable) {
+    public CustomClass(String title, Drawable drawable,Drawable selectedDrawable) {
         this.title = title;
         this.drawable = drawable;
+        this.selectedDrawable = selectedDrawable;
+    }
+
+    public Drawable getSelectedDrawable() {
+        return selectedDrawable;
+    }
+
+    public void setSelectedDrawable(Drawable selectedDrawable) {
+        this.selectedDrawable = selectedDrawable;
     }
 
     public String getTitle() {

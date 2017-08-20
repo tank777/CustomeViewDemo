@@ -19,6 +19,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
 
     private Context context;
     private List<CustomClass> dataList;
+    private CustomView lastSelectedView;
 
     public RecycleAdapter(Context context, List<CustomClass> dataList) {
         this.context = context;
@@ -35,6 +36,11 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
         CustomClass customClass = dataList.get(position);
         holder.customView.setTvTitle(customClass.getTitle());
         holder.customView.setIvImage(customClass.getDrawable());
+        if (lastSelectedView==null){
+            lastSelectedView = holder.customView;
+            holder.customView.selectLayout();
+            holder.customView.setSelectedIvImage(customClass.getSelectedDrawable());
+        }
     }
 
     @Override
@@ -49,6 +55,19 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
         public MyViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
+            customView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (lastSelectedView!=null){
+                        lastSelectedView.unselectedLayout();
+                        lastSelectedView.setIvImage(dataList.get(getAdapterPosition()).getDrawable());
+                        customView.selectLayout();
+                        customView.setSelectedIvImage(dataList.get(getAdapterPosition()).getSelectedDrawable());
+                        lastSelectedView = customView;
+                    }
+
+                }
+            });
         }
     }
 

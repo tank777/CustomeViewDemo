@@ -32,9 +32,9 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         int initSelectedPosition = 3;
         List<CustomClass> dataList = new ArrayList<CustomClass>();
-        dataList.add(new CustomClass("Camera", ContextCompat.getDrawable(getApplicationContext(),R.drawable.ic_action_camera)));
-        dataList.add(new CustomClass("Gallery", ContextCompat.getDrawable(getApplicationContext(),R.drawable.ic_action_camera)));
-        dataList.add(new CustomClass("Emoji", ContextCompat.getDrawable(getApplicationContext(),R.drawable.ic_action_camera)));
+        dataList.add(new CustomClass("Camera", ContextCompat.getDrawable(getApplicationContext(),R.drawable.ic_action_camera), ContextCompat.getDrawable(getApplicationContext(),R.drawable.ic_action_select_camera)));
+        dataList.add(new CustomClass("Gallery", ContextCompat.getDrawable(getApplicationContext(),R.drawable.ic_action_camera), ContextCompat.getDrawable(getApplicationContext(),R.drawable.ic_action_select_camera)));
+        dataList.add(new CustomClass("Emoji", ContextCompat.getDrawable(getApplicationContext(),R.drawable.ic_action_camera), ContextCompat.getDrawable(getApplicationContext(),R.drawable.ic_action_select_camera)));
 
         TestAdapter adapter = new TestAdapter(MainActivity.this, dataList);
         ListView listView = (ListView) findViewById(R.id.listView);

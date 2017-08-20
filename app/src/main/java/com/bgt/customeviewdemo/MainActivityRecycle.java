@@ -29,9 +29,9 @@ public class MainActivityRecycle extends AppCompatActivity {
         ButterKnife.bind(this);
 
         List<CustomClass> dataList = new ArrayList<CustomClass>();
-        dataList.add(new CustomClass("Camera", ContextCompat.getDrawable(getApplicationContext(),R.drawable.ic_action_camera)));
-        dataList.add(new CustomClass("Gallery", ContextCompat.getDrawable(getApplicationContext(),R.drawable.ic_action_camera)));
-        dataList.add(new CustomClass("Emoji", ContextCompat.getDrawable(getApplicationContext(),R.drawable.ic_action_camera)));
+        dataList.add(new CustomClass("Camera", ContextCompat.getDrawable(getApplicationContext(),R.drawable.ic_action_camera), ContextCompat.getDrawable(getApplicationContext(),R.drawable.ic_action_select_camera)));
+        dataList.add(new CustomClass("Gallery", ContextCompat.getDrawable(getApplicationContext(),R.drawable.ic_action_camera), ContextCompat.getDrawable(getApplicationContext(),R.drawable.ic_action_select_camera)));
+        dataList.add(new CustomClass("Emoji", ContextCompat.getDrawable(getApplicationContext(),R.drawable.ic_action_camera), ContextCompat.getDrawable(getApplicationContext(),R.drawable.ic_action_select_camera)));
 
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getApplicationContext(),3);
         rl.setLayoutManager(gridLayoutManager);

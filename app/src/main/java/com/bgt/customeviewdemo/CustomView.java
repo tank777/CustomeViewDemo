@@ -30,20 +30,22 @@ public class CustomView extends RelativeLayout {
     ImageView ivImage;
     @BindView(R.id.tv_title)
     TextView tvTitle;
+    @BindView(R.id.frameLayout)
+    FrameLayout frameLayout;
 
     public CustomView(@NonNull Context context) {
-        this(context,null);
+        this(context, null);
     }
 
     public CustomView(@NonNull Context context, @Nullable AttributeSet attrs) {
-        this(context, attrs,0);
+        this(context, attrs, 0);
     }
 
     public CustomView(@NonNull Context context, @Nullable AttributeSet attrs, @AttrRes int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         inflate(context, R.layout.custome_view, this);
         ButterKnife.bind(this);
-        setPadding(SizeUtils.convertDpToPixel(context, 5), 0 ,SizeUtils.convertDpToPixel(context, 5), 0);
+        setPadding(SizeUtils.convertDpToPixel(context, 5), 0, SizeUtils.convertDpToPixel(context, 5), 0);
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.CustomView, defStyleAttr, 0);
         int iconResId = a.getResourceId(R.styleable.CustomView_view_icon, 0);
         String title = a.getString(R.styleable.CustomView_view_title);
@@ -63,12 +65,24 @@ public class CustomView extends RelativeLayout {
         super(context, attrs, defStyleAttr, defStyleRes);
     }
 
-    public void setTvTitle(String title)
-    {
-      tvTitle.setText(title);
+    public void setTvTitle(String title) {
+        tvTitle.setText(title);
     }
 
-    public void setIvImage(Drawable drawable){
+    public void setIvImage(Drawable drawable) {
         ivImage.setImageDrawable(drawable);
+    }
+
+    public void setSelectedIvImage(Drawable selectedIvImage)
+    {
+        ivImage.setImageDrawable(selectedIvImage);
+    }
+
+    public void selectLayout() {
+        frameLayout.setSelected(true);
+    }
+
+    public void unselectedLayout() {
+        frameLayout.setSelected(false);
     }
 }
